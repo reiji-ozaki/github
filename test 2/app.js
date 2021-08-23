@@ -37,13 +37,11 @@ let score = 0;
 
  const $button = document.getElementsByTagName('button');
  const buttonLength = $button.length;
-//定数の文字列をHTMLに反映させる.　クイズの問題文、選択肢を定義
 const setupQuiz = () => {
 document.getElementById('js-question').textContent = quiz[quizIndex].question;
 let buttonIndex = 0;
 
 while(buttonIndex < buttonLength){
-//ここに命令
 $button[buttonIndex].textContent = quiz[quizIndex].answers[buttonIndex];
 buttonIndex++;
 }
@@ -59,14 +57,11 @@ const clickHandler = (e) => {
         quizIndex++;
         if(quizIndex < quizLength){
             setupQuiz();
-            //問題数がまだあればこちらを実行
          }else{
-         //問題数がもうなければこちらを実行
          window.alert('終了！あなたの正解数は'+　score　+'/'+　quizLength　+'です！')
          }
 };
 
-//ボタンをクリックしたら正誤判定
 let handlerIndex = 0;
 
 while (handlerIndex < buttonLength) {
